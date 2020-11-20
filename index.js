@@ -10,14 +10,15 @@ $(document).ready(function () {
         var hour = now.format("HH")
         $("textarea").each(function () {
             var current = parseInt($(this).attr("id"));
+            console.log(hour)
             if (current > hour) {
                 $(this).addClass("future")
             }
-            else if (current === hour) {
-                $(this).addClass("present")
+            else if (current < hour) {
+                $(this).addClass("past")
             }
             else {
-                $(this).addClass("past")
+                $(this).addClass("present")
             }
         })
     }
